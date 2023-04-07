@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
+import pytz
+
+import numpy as np
+
 from datetime import datetime
 from heapq import nlargest
 from re import match
-import pytz
-import numpy as np
 
 def datetimes_from_ts(column):
     return column.map(

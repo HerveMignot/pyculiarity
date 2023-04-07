@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
+import datetime
+
+import numpy as np
+
 from collections import namedtuple
-from pyculiarity.date_utils import format_timestamp, get_gran, date_format, datetimes_from_ts
-from pyculiarity.detect_anoms import detect_anoms
 from math import ceil
 from pandas import DataFrame, Timestamp
-import datetime
-import numpy as np
+from pyculiarity.date_utils import format_timestamp, get_gran, date_format, datetimes_from_ts
+from pyculiarity.detect_anoms import detect_anoms
 from six import string_types
 
+
 Direction = namedtuple('Direction', ['one_tail', 'upper_tail'])
+
 
 def detect_ts(df, max_anoms=0.10, direction='pos',
               alpha=0.05, only_last=None, threshold=None,

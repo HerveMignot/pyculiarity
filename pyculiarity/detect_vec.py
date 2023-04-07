@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
-from collections import namedtuple
-from pyculiarity.detect_anoms import detect_anoms
-from math import ceil
-from pandas import DataFrame, Series, Timestamp
 import numpy as np
+
+from pandas import DataFrame, Series, Timestamp
+
+from collections import namedtuple
+from math import ceil
+from pyculiarity.detect_anoms import detect_anoms
 from six import string_types
 
+
 Direction = namedtuple('Direction', ['one_tail', 'upper_tail'])
+
 
 def detect_vec(df, max_anoms=0.10, direction='pos',
                alpha=0.05, period=None, only_last=False,

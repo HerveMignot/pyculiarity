@@ -1,13 +1,16 @@
-from pyculiarity.date_utils import format_timestamp
-from rstl import STL
-from itertools import groupby
-from math import trunc, sqrt
-from scipy.stats import t as student_t
-from statsmodels.robust.scale import mad
+import sys
+
 import numpy as np
 import pandas as ps
 import statsmodels.api as sm
-import sys
+
+from itertools import groupby
+from math import trunc, sqrt
+from pyculiarity.date_utils import format_timestamp
+from rstl import STL
+from scipy.stats import t as student_t
+from statsmodels.robust.scale import mad
+
 
 def detect_anoms(data, k=0.49, alpha=0.05, num_obs_per_period=None,
                  use_decomp=True, one_tail=True,
