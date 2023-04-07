@@ -1,8 +1,17 @@
-from nose.tools import eq_
+import os
+
+import pandas as pd
+
 from pyculiarity import detect_ts, detect_vec
 from unittest import TestCase
-import pandas as pd
-import os
+
+
+def eq_(a, b, msg=None):
+    """Shorthand for 'assert a == b, "%r != %r" % (a, b)
+    """
+    if not a == b:
+        raise AssertionError(msg or "%r != %r" % (a, b))
+    
 
 class TestTS(TestCase):
     def setUp(self):

@@ -1,10 +1,19 @@
-from nose.tools import eq_, raises
+import os
+
+import numpy as np
+import pandas as pd
+
 from pyculiarity import detect_ts, detect_vec
 from pyculiarity.date_utils import date_format
 from unittest import TestCase
-import pandas as pd
-import os
-import numpy as np
+
+
+def eq_(a, b, msg=None):
+    """Shorthand for 'assert a == b, "%r != %r" % (a, b)
+    """
+    if not a == b:
+        raise AssertionError(msg or "%r != %r" % (a, b))
+
 
 class TestEdge(TestCase):
     def setUp(self):
